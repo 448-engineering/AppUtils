@@ -1,0 +1,22 @@
+[package]
+name = "app-utils"
+version = "1.0.0"
+authors = ["448 OG", "448 ENGINEERING DEVELOPERS <superuser@448.africa>"]
+edition = "2021"
+license = "MIT OR Apache-2.0"
+description = ""
+homepage = "https://github.com/448-engineering/AppUtils"
+repository = "https://github.com/448-engineering/AppUtils.git"
+keywords = ["utils"]
+categories = ["os"]
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+camino = { version = "1.1.6", optional = true }
+directories = { version = "5.0.1", optional = true }
+thiserror = { version = "1.0.50" }
+
+[features]
+default = ["app_dir", "utf8"]
+app_dir = ["dep:directories"]
+utf8 = ["dep:camino", "dep:directories"]
